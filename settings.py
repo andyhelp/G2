@@ -99,6 +99,7 @@ INSTALLED_APPS = (
     'pydj.playlist',
 #    'pydj.forum',
     'django.contrib.markup',
+    'django_extensions'
 )
 
 
