@@ -49,6 +49,11 @@ You can pip-install these, but make sure they're installed somehow
 * mutagen
 * markdown
 
+For simplicity you can use pipfreeze.txt file (included in the repository)::
+
+	pip install -r pipfreeze.txt
+
+
 Setting up G2
 =============
 The repository is a django project. It must be in a directory called "pydj",
