@@ -239,7 +239,9 @@ Head to the admin site at ``/admin``
 * Go to the Groups model and add a group for your listeners. At a minimum, this
   group should contain these permissions so listeners can view a functioning
   site:
-
+  
+  .. hint:: It looks like it is implemented and done automatically!? (TODO: verify and remove this section)
+  
   * Can view artist pages
   * Can add song to the playlist
   * Can view the playlist
@@ -254,6 +256,8 @@ Head to the admin site at ``/admin``
 
 Adding Users
 ------------
+.. hint:: It looks like it is implemented and done automatically!? (TODO: verify and remove this section)  
+
 Currently, adding users is a manual process. I stripped out the original
 Something Awful integrated login used at gbs.fm, but haven't added anything in
 its place.
