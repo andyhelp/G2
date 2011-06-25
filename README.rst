@@ -174,6 +174,9 @@ later.
     This is an absolute path on the filesysem to an mp3 that will play when
     otherwise nothing is playing. ``bees.mp3`` is included in the logic
     directory as a default; set this option to its path.
+    
+  REGISTER_SA_VERIFICATION
+    Set it to true if you want to enable http://forums.somethingawful.com/ verification when registering new users.
 
 Other directives, not documented yet
 ------------------------------------
