@@ -6,3 +6,4 @@ mutagen==1.20
 simplejson==2.1.6
 wsgiref==0.1.2
 -e git://github.com/gabrielgrant/django-extensions.git@dca0e7c95060f94fbb235e38d42e2b0f57e9229b#egg=django_extensions-0.7_pre-py2.7-dev
+flup==1.0.3.dev-20110405
