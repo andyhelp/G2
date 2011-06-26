@@ -9,6 +9,9 @@ sys.path.insert(0, os.path.join(PROJECT_PATH, "apps/"))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+# Required when used with fastcgi
+FORCE_SCRIPT_NAME = ''
+
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
@@ -18,7 +21,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'pydj',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(PROJECT_PATH, 'pydj'),                      # Or path to database file if using sqlite3.
         'USER': 'pydj',                      # Not used with sqlite3.
         'PASSWORD': 'pydj',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
