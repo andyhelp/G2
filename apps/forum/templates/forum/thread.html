@@ -23,7 +23,7 @@
 {% if not thread.forum.anonymous %}{% trans "by" %} <strong>{{ post.author }}</strong>{% endif %}{% if post.can_edit %}<br />
 <a href="{% url thread_post_edit thread.id,post.id %}?page={{page}}#post{{post.id}}">(edit)</a>{% endif %}</th>
 {% ifequal editid post.id %}
-<td><form method='post' action='{% url post_edit post.id %}'>
+<td><form method='post' action='{% url post_edit post.id %}'>{% csrf_token %}
 <p>{{edit_form.body}}</p>
 <p><input type='submit' value='Update' /></p>
 </form></td>
@@ -37,7 +37,7 @@
 </th>
 <td>
 {% if user.is_authenticated and not thread.closed%}
-  <form method='post' action='reply/'>
+  <form method='post' action='reply/'>{% csrf_token %}
     {{form.body.errors}}
     <textarea style="width: 97%; height: 15em; border: 1px solid; padding: 3px;" class="replybox" name="body" id="id_body"></textarea>
 <input type='submit' value='{% trans "Submit" %}' />
