@@ -1,7 +1,10 @@
 # Django settings for pydj project.
 
 import os
+import sys
+
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(PROJECT_PATH, "apps/"))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -97,7 +100,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'pydj.playlist',
-#    'pydj.forum',
+    'forum',
     'django.contrib.markup',
     'django_extensions'
 )
