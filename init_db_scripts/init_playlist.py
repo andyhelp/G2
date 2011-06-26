@@ -16,7 +16,7 @@ def run():
 
     directory = os.path.join(settings.PROJECT_PATH, 'playlist/song_dir');
     if not os.path.exists(directory):
-        print "Directory %s doesn't exists, please create." %dir
+        print "Directory %s doesn't exists, please create." %directory
         return
 
     playlist_songdir_1 = SongDir()
