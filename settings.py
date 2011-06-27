@@ -139,6 +139,7 @@ SHOW_QUERIES = False
 ICES_CONF = os.path.join(PROJECT_PATH, 'playlist/logic/ices.conf')
 
 STREAMINFO_URL='http://'
+STREAMINFO_MOUNT_POINT = ''
 
 NEXT_PASSWORD = 'nextp'
 
