@@ -2,10 +2,11 @@
 import urllib
 import os
 import sys
-sys.path.append("/home/jonnty/")
-import pydj.settings
+ICES_PATH = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, os.path.abspath(os.path.join(ICES_PATH, "../..")))
+import settings
 
-NEXT_URL="http://localhost/next/"+pydj.settings.NEXT_PASSWORD
+NEXT_URL="http://localhost/next/"+settings.NEXT_PASSWORD
 
 
 def ices_init():
