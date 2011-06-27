@@ -48,15 +48,18 @@ def getObj(table, name, oldid=None):
 
 
 listeners =  re.compile(r'>(\d+)<')
-def listenerCount(url):
+def listenerCount(url, mountPoint):
   try:
     opener = urllib2.build_opener()
     opener.addheaders = [('User-agent', 'Mozilla/5.0')]
     s = opener.open(url)
   except urllib2.URLError:
     return "?"
+  parsedMountPoint = ''
   for line in s:
-    if "Current Listeners" in line:
+    if "Mount Point" in line:
+      parsedMountPoint = line
+    if "Current Listeners" in line and mountPoint in parsedMountPoint:
       listenerline = s.next()
       return listeners.search(listenerline).group(1)
       break
@@ -64,7 +67,7 @@ def listenerCount(url):
     return "?"
     
 def ListenerCount():
-  return listenerCount(settings.STREAMINFO_URL)
+  return listenerCount(settings.STREAMINFO_URL, settings.STREAMINFO_MOUNT_POINT)
     
     
     

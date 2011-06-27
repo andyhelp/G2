@@ -138,6 +138,10 @@ later.
     scraped for the listener count. Currently, this only works with icecast
     servers.
 
+  STREAMINFO_MOUNT_POINT
+    Specify a mount point name to get a listeners count. Used if server provides
+    mount points for other radio stations. Set to empty string if not used.
+
   NEXT_PASSWORD
     Set this to something random and secret. It's used for the ices streaming
     source to query G2 for the next song to play.
