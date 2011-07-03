@@ -105,7 +105,8 @@ INSTALLED_APPS = (
     'pydj.playlist',
     'forum',
     'django.contrib.markup',
-    'django_extensions'
+    'django_extensions',
+    'rss_upload',
 )
 
 

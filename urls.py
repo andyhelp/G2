@@ -76,6 +76,7 @@ urlpatterns = patterns('',
 (r'^g2admin$', 'pydj.playlist.views.g2admin', {}, 'g2admin'), 
 (r'^stop_stream$', 'pydj.playlist.views.stop_stream', {}, 'stop_stream'), 
 (r'^start_stream$', 'pydj.playlist.views.start_stream', {}, 'start_stream'), 
+(r'^rss/', include('rss_upload.urls')),
 
 #javascript stuff
 (r'^artist/$', 'pydj.playlist.views.artist', {}, "artist_js"),
