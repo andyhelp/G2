@@ -29,7 +29,6 @@ def newEditsContextProcessor(request):
     return {'new_edits': False}
   
 def positionContextProcessor(request):
-  if not request.user.is_authenticated(): return {}
   cue = CueFile(settings.LOGIC_DIR + "/ices.cue")
   d = {}
   try:
