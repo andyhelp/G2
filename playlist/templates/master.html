@@ -398,14 +398,18 @@ $(document).ready(function(){
     <li><a href="{% url playlist.views.search %}" class="boxed">&nbsp;search</a></li> 
     <li><form action="{% url playlist.views.search %}" method="get" class="boxed"><input accesskey="f" id="id_query" name="query" maxlength="100" type="text" value="quick search"></form></li> 
     <li><a href="{% url playlist.views.upload %}" class="boxed">&nbsp;upload</a></li>
-     <li><a href="{% url rss_upload.views.list %}" class="boxed">&nbsp;RSS</a></li>
+    <li><a href="{% url rss_upload.views.list %}" class="boxed">&nbsp;RSS</a></li>
     <li><a href="{% url playlist.views.search %}?query=favourites%3D{{user.username}}" class="boxed">&nbsp;favourites</a></li>
     <li><a href="{% url playlist.views.listartists "all","1" %}" class="boxed">&nbsp;artists</a></li> 
-    <li><a href="{% url playlist.views.user user.id %}" class="boxed">&nbsp;user page</a></li> 
+    {% if user.id %}
+    <li><a href="{% url playlist.views.user user.id %}" class="boxed">&nbsp;user page</a></li>
+    {% endif %}
     <li><a href="{% url user_settings %}" class="boxed">&nbsp;settings</a></li> 
     <li><a href="{% url forum_index %}" class="boxed">&nbsp;forums</a></li> 
     <li><a href="{{ listenurl }}" class="boxed">&nbsp;listen!</a></li> 
+    {% if user.id %}
     <li><a href="{% url django.contrib.auth.views.logout_then_login %}" class="boxed">&nbsp;logout</a></li> 
+    {% endif %}
     {% if perms.playlist.view_edits %}
     <li><a href="{% url edit_queue %}" class="boxed {% if new_edits %}new{% endif %}">&nbsp;edit queue</a></li> 
     {% endif %}

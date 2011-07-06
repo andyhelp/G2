@@ -104,7 +104,7 @@ def splaylist(request):
   except KeyError: 
     return HttpResponseRedirect(reverse('login'))
     
-@permission_required('playlist.view_playlist')
+#@permission_required('playlist.view_playlist')
 def playlist(request, lastid=None):
   #normal entry route
   return jsplaylist(request, lastid)
