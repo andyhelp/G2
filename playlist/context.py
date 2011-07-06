@@ -8,7 +8,6 @@ from django.db import connection
 from django.conf import settings
 
 def listenersContextProcessor(request):
-  if not request.user.is_authenticated(): return {}
   return {
     'listeners': ListenerCount(),
   }
