@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% block title %}Rss feed list{% endblock %}
+
+{% block main %} 
+	<div>
+		Rss {{rss.url}} entries:<br/>
+		<ul>
+			{% for entry in entry_list %}
+				<li><a href="{{ entry.track_url }}">{{ entry.title }}</a> (<a href="/rss/upload/{{rss.id}}/{{entry.id}}">upload</a>)</li>
+			{% endfor %}
+	    </ul>
+	</div>
+{% endblock %}

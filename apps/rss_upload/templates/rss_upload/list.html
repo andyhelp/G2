@@ -11,7 +11,7 @@
 		Your rss list:<br/>
 		<ul>
 			{% for rss in rss_list %}
-				<li><a href="{{ rss.url }}">{{ rss.url }}</a> (<a href="/rss/refresh?id={{rss.id}}">refresh</a>)</li>
+				<li><a href="{{ rss.url }}">{{ rss.url }}</a> (<a href="/rss/refresh?id={{rss.id}}">refresh</a>) (<a href="/rss/entries/{{rss.id}}">show</a>)</li>
 			{% endfor %}
 	    </ul>
 	</div>
