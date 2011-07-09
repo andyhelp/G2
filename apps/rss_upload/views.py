@@ -3,14 +3,17 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, Http404
 from rss_upload.forms import RssUrlForm, RssRefreshForm
 from rss_upload.models import Rss, RssEntry
+from django.contrib.auth.decorators import login_required
 import urllib
 import tempfile
 
+@login_required
 def list(request):
     rss_list = Rss.objects.filter(user=request.user)
     form = RssUrlForm()
     return render_to_response('rss_upload/list.html', {'rss_list': rss_list, 'form': form}, context_instance=RequestContext(request))
 
+@login_required
 def entries(request,rssid_str):
     rssid = int(rssid_str)
     rss_list = Rss.objects.filter(id=rssid)
@@ -22,6 +25,7 @@ def entries(request,rssid_str):
     
 
 
+@login_required
 def add(request):
     if request.method == 'POST': # If the form has been submitted...
         form = RssUrlForm(request.POST) # A form bound to the POST data
@@ -35,6 +39,7 @@ def add(request):
     return HttpResponseRedirect('/rss/list')
 
 
+@login_required
 def refresh(request):
     if request.method == 'GET': # If the form has been submitted...
         id = request.GET.get('id')
@@ -44,6 +49,7 @@ def refresh(request):
     return HttpResponseRedirect('/rss/list')
 
 
+@login_required
 def upload(request, rssid_str, entryid_str):
     rssid = int(rssid_str)
     entryid = int(entryid_str)
