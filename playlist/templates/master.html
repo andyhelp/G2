@@ -408,7 +408,9 @@ $(document).ready(function(){
     <li><a href="{% url forum_index %}" class="boxed">&nbsp;forums</a></li> 
     <li><a href="{{ listenurl }}" class="boxed">&nbsp;listen!</a></li> 
     {% if user.id %}
-    <li><a href="{% url django.contrib.auth.views.logout_then_login %}" class="boxed">&nbsp;logout</a></li> 
+        <li><a href="{% url django.contrib.auth.views.logout_then_login %}" class="boxed">&nbsp;logout</a></li> 
+    {% else %}
+        <li><a href="{% url django.contrib.auth.views.login %}" class="boxed">&nbsp;login</a></li> 
     {% endif %}
     {% if perms.playlist.view_edits %}
     <li><a href="{% url edit_queue %}" class="boxed {% if new_edits %}new{% endif %}">&nbsp;edit queue</a></li> 
