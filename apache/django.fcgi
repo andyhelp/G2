@@ -5,7 +5,7 @@ PIDFILE=/tmp/${USER}django.pid
 
 #Change the values below to fit your memory and performance requirements
 #The values below are for the lowest possible memory usage I was able to get
-MAX_REQUESTS=1
+MAX_REQUESTS=5
 MAX_CHILDRENS=1
 MAX_SPARE=2
 
