@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, Http404
 from rss_upload.forms import RssUrlForm, RssRefreshForm
 from rss_upload.models import Rss, RssEntry
+from playlist.upload import UploadedFile
 import urllib
 import tempfile
 
