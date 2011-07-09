@@ -238,7 +238,7 @@ class SongSet(QuerySet):
     
     select = {#'is_banned' : 'banned = 1',
               #'on_playlist' : playlist,
-              'recently_played': recent,
+#              'recently_played': recent,
               }
     return super(SongSet, self).annotate(on_playlist=Count('entries')).\
                                           extra(select=select)
