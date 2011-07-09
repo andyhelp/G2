@@ -32,7 +32,7 @@ class Playlist(object):
       else:
         d = {'can_remove':False, 'object':entry, 'pl':False}
         
-      if entry.song in self.user.get_profile().favourites.all():
+      if self.user.is_authenticated() and entry.song in self.user.get_profile().favourites.all():
         d['favourite'] = True
       else:
         d['favourite'] = False
