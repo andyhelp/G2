@@ -12,7 +12,13 @@ class Rss(models.Model):
         for entry in feed.entries: 
             rsse = RssEntry()
             rsse.rss = self
-            rsse.track_url = entry.media_content[0]['url']
+            if 'media_content' in entry.keys():
+                rsse.track_url = entry.media_content[0]['url']
+            else:
+                for l in entry.links:
+                    if l['type'] == 'audio/mpeg':
+                        rsse.track_url = l['href']
+                        break
             rsse.title = entry.subtitle
             rsse.updated_parsed = entry.updated_parsed
             fentry = RssEntry.objects.filter(track_url=rsse.track_url)
