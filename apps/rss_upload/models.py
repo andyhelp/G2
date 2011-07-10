@@ -19,7 +19,12 @@ class Rss(models.Model):
                     if l['type'] == 'audio/mpeg':
                         rsse.track_url = l['href']
                         break
-            rsse.title = entry.subtitle
+            if 'title' in entry.keys():
+                rsse.title = entry.title
+            elif 'subtitle' in entry.keys():
+                rsse.title = entry.subtitle
+            else:
+                rsse.title = ''
             rsse.updated_parsed = entry.updated_parsed
             fentry = RssEntry.objects.filter(track_url=rsse.track_url)
             if not fentry:
